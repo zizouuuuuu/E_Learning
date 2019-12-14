@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AccuielController">
+   <children>
+      <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="550.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <Pane prefHeight="199.0" prefWidth="698.0">
+               <children>
+                  <ImageView fitHeight="243.0" fitWidth="790.0" layoutX="-8.0" layoutY="-43.0">
+                     <image>
+                        <Image url="@social-learning-infographic-header.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="id_form" layoutX="28.0" layoutY="52.0" visible="false" />
+                  <Label fx:id="id_quiz" layoutX="28.0" layoutY="70.0" visible="false" />
+               </children>
+            </Pane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.25" layoutX="249.0" layoutY="99.0" prefHeight="435.3333333333333" prefWidth="698.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane prefHeight="433.0" prefWidth="187.0">
+                           <children>
+                              <SplitPane dividerPositions="0.500772797527048" layoutX="6.0" layoutY="75.0" orientation="VERTICAL" prefHeight="433.3333333333333" prefWidth="171.33333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #2E3238;">
+                                       <children>
+                                          <ImageView fx:id="im" fitHeight="99.0" fitWidth="149.0" layoutX="22.0" layoutY="14.0" onMouseClicked="#afficheProfil" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@elon-musk-une-785x589.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox layoutX="3.0" layoutY="139.0" prefHeight="63.0" prefWidth="163.0">
+                                             <children>
+                                                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="Nom : " textFill="WHITE" />
+                                                      <Label fx:id="nom" prefHeight="17.0" prefWidth="79.0" textFill="WHITE" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="Prenom : " textFill="WHITE" />
+                                                      <Label fx:id="prenom" prefHeight="17.0" prefWidth="82.0" textFill="WHITE" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <Label fx:id="id" layoutX="22.0" layoutY="202.0" prefHeight="17.0" prefWidth="113.0" textFill="WHITE" visible="false" />
+                                          <Button fx:id="disco" layoutX="45.0" layoutY="217.0" mnemonicParsing="false" onAction="#disconnect" prefHeight="25.0" prefWidth="95.0" text="Disconnect" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane fx:id="courQ" prefHeight="212.66666666666666" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <ListView fx:id="listCoursQ" layoutY="40.0" prefHeight="99.0" prefWidth="190.0" />
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="6.0" prefHeight="17.0" prefWidth="163.0" text="Cours" />
+                                                <Button layoutX="69.0" layoutY="167.0" mnemonicParsing="false" onAction="#ouvrirCourQ" text="Ouvrir" />
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="prof" prefHeight="243.0" prefWidth="190.0" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox alignment="TOP_CENTER" layoutX="3.0" layoutY="41.0" prefHeight="157.0" prefWidth="179.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="ressourceInst" mnemonicParsing="false" onAction="#RessourceInst" prefHeight="25.0" prefWidth="147.0" text="Mes Formations" />
+                                                      <Button mnemonicParsing="false" onAction="#sondage" prefHeight="25.0" prefWidth="147.0" text="Mes Sondages" />
+                                                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Mes Blogs" />
+                                                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Mes Wikis" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="etud" prefHeight="243.0" prefWidth="190.0" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox alignment="TOP_CENTER" layoutX="3.0" layoutY="41.0" prefHeight="157.0" prefWidth="179.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="frmApp" mnemonicParsing="false" onAction="#setFrmApp" prefWidth="77.0" text="Fomartions" />
+                                                      <Button mnemonicParsing="false" onAction="#sondage" prefHeight="25.0" prefWidth="77.0" text="Sondages" />
+                                                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Blogs" />
+                                                      <Button mnemonicParsing="false" prefWidth="77.0" text="Wikis" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Pane fx:id="formationIns" layoutX="152.0" layoutY="85.0" prefHeight="494.0" prefWidth="580.0" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="496.0" prefWidth="580.0" spacing="20.0">
+                                       <children>
+                                          <HBox prefHeight="108.4" prefWidth="519.0">
+                                             <children>
+                                                <VBox prefHeight="109.0" prefWidth="400.0" spacing="2.0">
+                                                   <children>
+                                                      <TextField fx:id="nomFormation" prefHeight="25.0" prefWidth="100.0" promptText="Ajouter formation" />
+                                                      <ListView fx:id="listFormation" prefHeight="108.0" prefWidth="400.0" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" prefHeight="109.0" prefWidth="179.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="ajouterFormInst" disable="true" mnemonicParsing="false" onAction="#setAjouterFormInst" prefHeight="25.0" prefWidth="73.0" text="Ajouter" />
+                                                      <Button fx:id="supprimerFormInst" disable="true" mnemonicParsing="false" onAction="#setSupprimerFormInst" prefWidth="73.0" text="Supprimer" />
+                                                      <Button fx:id="afficherTout" disable="true" mnemonicParsing="false" onAction="#AfficherTout" prefWidth="73.0" text="Afficher" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="108.4" prefWidth="519.0">
+                                             <children>
+                                                <VBox prefHeight="109.0" prefWidth="400.0" spacing="2.0">
+                                                   <children>
+                                                      <TextField fx:id="titreCour" promptText="Ajouter titre du cours" />
+                                                      <ListView fx:id="listCours" prefHeight="82.0" prefWidth="400.0" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" prefHeight="109.0" prefWidth="179.0" spacing="5.0">
+                                                   <children>
+                                                      <Button fx:id="addFile" disable="true" mnemonicParsing="false" onAction="#ajouterCour" prefHeight="25.0" prefWidth="73.0" text="Ajouter" />
+                                                      <Button fx:id="openFile" disable="true" mnemonicParsing="false" onAction="#ouvrirCour" prefWidth="73.0" text="Ouvrir" />
+                                                      <Button fx:id="supprimerCour" disable="true" mnemonicParsing="false" onAction="#setSupprimerCour" prefWidth="73.0" text="Supprimer" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="109.0" prefWidth="519.0">
+                                             <children>
+                                                 <TableView fx:id="tableStuFor" prefHeight="118.0" prefWidth="400.0">
+                                                     <columns>
+                                                         <TableColumn fx:id="mat" prefWidth="115.0" text="Matricule" visible="false" />
+                                                         <TableColumn fx:id="nomC" prefWidth="133.0" text="Nom" />
+                                                         <TableColumn fx:id="preC" prefWidth="133.0" text="Prenom" />
+                                                         <TableColumn fx:id="specC" prefWidth="133.0" text="Specialite" />
+                                                     </columns>
+                                                 </TableView>
+                                                <VBox alignment="CENTER" prefHeight="109.0" prefWidth="179.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="tle" disable="true" mnemonicParsing="false" onAction="#setAllStudents" text="Tout les etudiants" />
+                                                      <Button fx:id="ajouterEtudiant" disable="true" mnemonicParsing="false" onAction="#setAjouterEtudiant" prefWidth="73.0" text="Ajouter" />
+                                                      <Button fx:id="supprimerEtudiant" disable="true" mnemonicParsing="false" onAction="#setSupprimerApp" prefWidth="73.0" text="Supprimer" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="108.4" prefWidth="519.0">
+                                             <children>
+                                                <VBox prefHeight="200.0" prefWidth="400.0" spacing="2.0">
+                                                   <children>
+                                                      <TextField fx:id="addQuiz" promptText="Ajouter titre du quiz" />
+                                                      <ListView fx:id="listQuiz" prefHeight="82.0" prefWidth="400.0" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" prefHeight="112.0" prefWidth="180.0" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="ajouterQuiz" disable="true" mnemonicParsing="false" onAction="#setAjouterQuiz" prefWidth="73.0" text="Ajouter" />
+                                                      <Button fx:id="modifierQuiz" disable="true" mnemonicParsing="false" onAction="#setModifierQuiz" prefWidth="73.0" text="Modifier" />
+                                                      <Button fx:id="supprimerQuiz" disable="true" mnemonicParsing="false" onAction="#setSupprimerQuiz" prefWidth="73.0" text="Supprimer" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                     <Pane fx:id="allStudents" layoutY="250.0" prefHeight="120.0" prefWidth="400.0" style="-fx-background-color: white;">
+                                         <children>
+                                             <TableView fx:id="tableAllStu" prefHeight="120.0" prefWidth="400.0">
+                                                 <columns>
+                                                     <TableColumn fx:id="mat1" prefWidth="105.99993646144867" text="Matricule" visible="false" />
+                                                     <TableColumn fx:id="nomC1" prefWidth="133.0" text="Nom" />
+                                                     <TableColumn fx:id="prenomC1" prefWidth="133.0" text="Prenom" />
+                                                     <TableColumn fx:id="specC1" prefWidth="133.0" text="Specialite" />
+                                                 </columns>
+                                             </TableView>
+                                         </children>
+                                     </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="profil" prefHeight="494.0" prefWidth="580.0" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="62.0" layoutY="29.0" text="Your Profil :" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="78.0" text="Matricule :" textFill="WHITE" />
+                                    <Label layoutX="28.0" layoutY="123.0" text="Name :" textFill="WHITE" />
+                                    <Label layoutX="26.0" layoutY="166.0" text="Last Name :" textFill="WHITE" />
+                                    <Label layoutX="25.0" layoutY="208.0" text="Date of birth :" textFill="WHITE" />
+                                    <Label layoutX="22.0" layoutY="253.0" text="Address :" textFill="WHITE" />
+                                    <Label layoutX="29.0" layoutY="294.0" text="Password :" textFill="WHITE" />
+                                    <Label fx:id="grade" layoutX="292.0" layoutY="78.0" text="Grade :" textFill="WHITE" />
+                                    <Label fx:id="spec" layoutX="292.0" layoutY="123.0" text="Specialite :" textFill="WHITE" />
+                                    <Label fx:id="niv" layoutX="292.0" layoutY="166.0" text="Level :" textFill="WHITE" />
+                                    <Label fx:id="section" layoutX="292.0" layoutY="208.0" text="Section" textFill="WHITE" />
+                                    <TextField fx:id="t1" disable="true" layoutX="111.0" layoutY="74.0" />
+                                    <TextField fx:id="t2" disable="true" layoutX="111.0" layoutY="119.0" />
+                                    <TextField fx:id="t3" disable="true" layoutX="111.0" layoutY="162.0" />
+                                    <TextField fx:id="t4" disable="true" layoutX="111.0" layoutY="204.0" />
+                                    <TextField fx:id="t5" disable="true" layoutX="111.0" layoutY="249.0" />
+                                    <TextField fx:id="t6" disable="true" layoutX="111.0" layoutY="290.0" />
+                                    <TextField fx:id="gra" disable="true" layoutX="347.0" layoutY="74.0" />
+                                    <TextField fx:id="special" disable="true" layoutX="347.0" layoutY="119.0" />
+                                    <TextField fx:id="nve" disable="true" layoutX="347.0" layoutY="162.0" />
+                                    <TextField fx:id="sec" disable="true" layoutX="347.0" layoutY="204.0" />
+                                    <Button fx:id="modify" layoutX="185.0" layoutY="388.0" mnemonicParsing="false" onAction="#modifierProfil" prefHeight="25.0" prefWidth="73.0" text="Modify" />
+                                    <Button fx:id="confirme" disable="true" layoutX="382.0" layoutY="388.0" mnemonicParsing="false" onAction="#confirmeModification" prefHeight="25.0" prefWidth="77.0" text="Confirme" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="formationApp" prefHeight="494.0" prefWidth="579.3333333333334" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox layoutX="-1.0" prefHeight="494.0" prefWidth="580.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="20.0">
+                                             <children>
+                                                <Label contentDisplay="CENTER" prefHeight="36.0" prefWidth="177.0" text="Mes formation" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="listeFormApp" prefHeight="130.0" prefWidth="0.0" />
+                                                <Label text="Mes cours" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="listCoursApp" prefHeight="130.0" prefWidth="200.0" />
+                                                <Label text="Mes quizs" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="listQuizApp" prefHeight="130.0" prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </ListView>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="419.0" prefWidth="174.0" spacing="140.0">
+                                             <children>
+                                                <Button fx:id="afficherFormApp" disable="true" mnemonicParsing="false" onAction="#setAfficherFormApp" text="Afficher" />
+                                                <Button fx:id="ouvrirCourApp" disable="true" mnemonicParsing="false" onAction="#setOuvrirCourApp" text="Ouvrir" />
+                                                <Button fx:id="repondreQuizApp" disable="true" mnemonicParsing="false" onAction="#setRepondreQuizApp" text="Repondre" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets top="50.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="quiz" prefHeight="494.0" prefWidth="580.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="496.0" prefWidth="580.0">
+                                       <children>
+                                          <HBox prefHeight="423.0" prefWidth="115.0">
+                                             <children>
+                                                <VBox prefHeight="200.0" prefWidth="290.0">
+                                                   <children>
+                                                      <VBox prefHeight="230.0" prefWidth="290.0" spacing="10.0">
+                                                         <children>
+                                                            <TextField fx:id="ques1" promptText="Question 1" />
+                                                            <TextField fx:id="rep1" prefHeight="25.0" prefWidth="268.0" promptText="Reponse" />
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="100.0" prefWidth="23.0" spacing="18.0">
+                                                                     
+                                                                     <children>
+                                                                        <CheckBox fx:id="ch1" mnemonicParsing="false" onAction="#handleBox1" visible="false" />
+                                                                        <CheckBox fx:id="ch2" mnemonicParsing="false" onAction="#handleBox2" visible="false" />
+                                                                        <CheckBox fx:id="ch3" mnemonicParsing="false" onAction="#handleBox3" visible="false" />
+                                                                        <CheckBox fx:id="ch4" mnemonicParsing="false" onAction="#handleBox4" visible="false" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets top="3.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="130.0" prefWidth="227.0" spacing="10.0">
+                                                                     <children>
+                                                                        <TextField fx:id="ch1q1" promptText="Choix 1" />
+                                                                        <TextField fx:id="ch2q1" promptText="Choix 2" />
+                                                                        <TextField fx:id="ch3q1" promptText="Choix 3" />
+                                                                        <TextField fx:id="ch4q1" promptText="Choix 4" />
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </VBox>
+                                                      <VBox prefHeight="225.0" prefWidth="290.0" spacing="10.0">
+                                                         <children>
+                                                            <TextField fx:id="ques2" promptText="Question 2" />
+                                                            <TextField fx:id="rep2" promptText="Reponse" />
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="23.0" spacing="18.0">
+                                                                     <children>
+                                                                        <CheckBox fx:id="ch5" mnemonicParsing="false" onAction="#handleBox5" visible="false" />
+                                                                        <CheckBox fx:id="ch6" mnemonicParsing="false" onAction="#handleBox6" visible="false" />
+                                                                        <CheckBox fx:id="ch7" mnemonicParsing="false" onAction="#handleBox7" visible="false" />
+                                                                        <CheckBox fx:id="ch8" mnemonicParsing="false" onAction="#handleBox8" visible="false" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets top="3.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="130.0" prefWidth="227.0" spacing="10.0">
+                                                                     <children>
+                                                                        <TextField fx:id="ch1q2" promptText="Choix 1" />
+                                                                        <TextField fx:id="ch2q2" promptText="Choix 2" />
+                                                                        <TextField fx:id="ch3q2" promptText="Choix 3" />
+                                                                        <TextField fx:id="ch4q2" promptText="Choix 4" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="469.0" prefWidth="290.0">
+                                                   <children>
+                                                      <VBox prefHeight="230.0" prefWidth="290.0" spacing="10.0">
+                                                         <children>
+                                                            <TextField fx:id="ques3" promptText="Question 3" />
+                                                            <TextField fx:id="rep3" promptText="Reponse" />
+                                                            <HBox prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="23.0" spacing="18.0">
+                                                                     <padding>
+                                                                        <Insets top="3.0" />
+                                                                     </padding>
+                                                                     <children>
+                                                                        <CheckBox fx:id="ch9" mnemonicParsing="false" onAction="#handleBox9" visible="false" />
+                                                                        <CheckBox fx:id="ch10" mnemonicParsing="false" onAction="#handleBox10" visible="false" />
+                                                                        <CheckBox fx:id="ch11" mnemonicParsing="false" onAction="#handleBox11" visible="false" />
+                                                                        <CheckBox fx:id="ch12" mnemonicParsing="false" onAction="#handleBox12" visible="false" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="130.0" prefWidth="227.0" spacing="10.0">
+                                                                     <children>
+                                                                        <TextField fx:id="ch1q3" promptText="Choix 1" />
+                                                                        <TextField fx:id="ch2q3" promptText="Choix 2" />
+                                                                        <TextField fx:id="ch3q3" promptText="Choix 3" />
+                                                                        <TextField fx:id="ch4q3" promptText="Choix 4" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="225.0" prefWidth="290.0" spacing="10.0">
+                                                         <children>
+                                                            <TextField fx:id="ques4" promptText="Question 4" />
+                                                            <TextField fx:id="rep4" promptText="Reponse" />
+                                                            <HBox prefHeight="227.0" prefWidth="290.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="23.0" spacing="18.0">
+                                                                     <children>
+                                                                        <CheckBox fx:id="ch13" mnemonicParsing="false" onAction="#handleBox13" visible="false" />
+                                                                        <CheckBox fx:id="ch14" mnemonicParsing="false" onAction="#handleBox14" visible="false" />
+                                                                        <CheckBox fx:id="ch15" mnemonicParsing="false" onAction="#handleBox15" visible="false" />
+                                                                        <CheckBox fx:id="ch16" mnemonicParsing="false" onAction="#handleBox16" visible="false" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets top="3.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="197.0" prefWidth="227.0" spacing="10.0">
+                                                                     <children>
+                                                                        <TextField fx:id="ch1q4" promptText="Choix 1" />
+                                                                        <TextField fx:id="ch2q4" promptText="Choix 2" />
+                                                                        <TextField fx:id="ch3q4" promptText="Choix 3" />
+                                                                        <TextField fx:id="ch4q4" promptText="Choix 4" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="160.0">
+                                             <children>
+                                                <Button fx:id="retourF" disable="true" mnemonicParsing="false" onAction="#retourToForm" text="Retour" />
+                                                <Button fx:id="confirmerQ" mnemonicParsing="false" onAction="#confirmeQuiz" text="Confirmer " />
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="83.0">
+                                                   <children>
+                                                      <Label fx:id="note" text="Note : " visible="false" />
+                                                      <TextField fx:id="noteT" editable="false" prefHeight="25.0" prefWidth="30.0" visible="false" />
+                                                      <Label fx:id="sur20" alignment="CENTER" text="/20" visible="false" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                               <Pane fx:id="sondage" prefHeight="494.0" prefWidth="579.3333333333334" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                   <children>
+                                       <AnchorPane layoutY="247.0" prefHeight="250.0" prefWidth="580.0">
+                                           <children>
+                                               <Pane fx:id="resultat" prefHeight="250.0" prefWidth="580.0" style="-fx-background-color: #2E3238;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                       <PieChart fx:id="statistics" layoutX="276.0" layoutY="3.0" prefHeight="245.0" prefWidth="290.0" style="-fx-background-color: #2E3238;" />
+                                                <TextArea fx:id="contenuRsltSnd" layoutX="21.0" layoutY="91.0" prefHeight="69.0" prefWidth="221.0" />
+                                                <Label layoutX="21.0" layoutY="55.0" prefHeight="17.0" prefWidth="147.0" text="Contenu du Sondage :" textFill="WHITE" />
+                                                <Label layoutX="21.0" layoutY="182.0" text="Nombre de participants :" textFill="WHITE" />
+                                                <Label fx:id="nbPart" layoutX="168.0" layoutY="182.0" prefHeight="17.0" prefWidth="73.0" textFill="WHITE" />
+                                                   </children>
+                                               </Pane>
+                                               <Pane fx:id="creeSondage" prefHeight="250.0" prefWidth="580.0" style="-fx-background-color: #2E3238;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                       <VBox prefHeight="250.0" prefWidth="580.0" spacing="15.0">
+                                                           <children>
+                                                      <TextField fx:id="titreSnd" prefHeight="25.0" prefWidth="460.0" promptText="Titre du sondage">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextArea fx:id="contenuSondage" prefHeight="23.0" prefWidth="560.0" promptText="Contenu">
+                                                         <VBox.margin>
+                                                            <Insets right="100.0" top="-10.0" />
+                                                         </VBox.margin>
+                                                      </TextArea>
+                                                               <HBox prefHeight="139.0" prefWidth="580.0">
+                                                                   <children>
+                                                                       <VBox prefHeight="188.0" prefWidth="30.0" spacing="13.0">
+                                                                           <children>
+                                                                               <CheckBox fx:id="choixBox1" mnemonicParsing="false" onAction="#box1" visible="false" />
+                                                                               <CheckBox fx:id="choixBox2" mnemonicParsing="false" onAction="#box2" visible="false" />
+                                                                               <CheckBox fx:id="choixBox3" mnemonicParsing="false" onAction="#box3" visible="false" />
+                                                                               <CheckBox fx:id="choixBox4" mnemonicParsing="false" onAction="#box4" visible="false" />
+                                                                           </children>
+                                                                           <padding>
+                                                                               <Insets top="4.0" />
+                                                                           </padding>
+                                                                       </VBox>
+                                                                       <VBox prefHeight="188.0" prefWidth="303.0" spacing="5.0">
+                                                                           <children>
+                                                                               <TextField fx:id="choix1" prefHeight="25.0" prefWidth="205.0" promptText="choix 1" />
+                                                                               <TextField fx:id="choix2" promptText="choix 2" />
+                                                                               <TextField fx:id="choix3" promptText="choix 3" />
+                                                                               <TextField fx:id="choix4" promptText="choix 4" />
+                                                                           </children>
+                                                                       </VBox>
+                                                                   </children>
+                                                                   <padding>
+                                                                       <Insets left="5.0" />
+                                                                   </padding>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                               </HBox>
+                                                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                                                                   <children>
+                                                                       <Button fx:id="creerSnd" mnemonicParsing="false" onAction="#setCreeSondage" prefHeight="25.0" prefWidth="75.0" text="Creer" visible="false" />
+                                                                       <Button fx:id="confirmerSnd" mnemonicParsing="false" onAction="#confirmeParticipation" prefHeight="25.0" prefWidth="75.0" text="Confirmer" visible="false" />
+                                                                   </children>
+                                                               </HBox>
+                                                           </children>
+                                                           <padding>
+                                                               <Insets left="10.0" right="10.0" />
+                                                           </padding>
+                                                       </VBox>
+                                                   </children>
+                                               </Pane>
+                                           </children>
+                                       </AnchorPane>
+                                       <HBox prefHeight="250.0" prefWidth="579.0">
+                                           <children>
+                                               <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="400.0">
+                                                   <children>
+                                                       <Label prefHeight="43.0" prefWidth="214.0" text="Tout Les sondages">
+                                                           <font>
+                                                               <Font name="Century" size="25.0" />
+                                                           </font>
+                                                           <textFill>
+                                                               <RadialGradient centerX="0.4962825420620716" centerY="0.5" cycleMethod="REFLECT" radius="0.38372093023255816">
+                                                                   <stops>
+                                                                       <Stop color="#e36262" />
+                                                                       <Stop color="WHITE" offset="1.0" />
+                                                                   </stops>
+                                                               </RadialGradient>
+                                                           </textFill>
+                                                       </Label>
+                                                       <TableView fx:id="tableSondages" editable="true" prefHeight="200.0" prefWidth="200.0">
+                                                           <columns>
+                                                               <TableColumn fx:id="titreSondage" prefWidth="200.0" text="Titre sondage" />
+                                                               <TableColumn fx:id="createurSondage" minWidth="0.0" prefWidth="200.0" text="Createur" />
+                                                           </columns>
+                                                       </TableView>
+                                                   </children>
+                                                   <padding>
+                                                       <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                               </VBox>
+                                               <VBox alignment="CENTER" prefHeight="250.0" prefWidth="180.0" spacing="20.0">
+                                                   <children>
+                                                       <Button fx:id="mtSondage" mnemonicParsing="false" onAction="#MesSondages" prefHeight="25.0" prefWidth="118.0" text="Mes Sondages" />
+                                                       <Button mnemonicParsing="false" onAction="#afficherSondage" prefHeight="25.0" prefWidth="100.0" text="Afficher resultat" />
+                                                       <Button mnemonicParsing="false" onAction="#participerSondage" prefHeight="25.0" prefWidth="100.0" text="Participer" />
+                                                       <Button mnemonicParsing="false" onAction="#creeSnd" prefHeight="25.0" prefWidth="99.0" text="Creer" />
+                                                       <Button fx:id="supprimerSondage" mnemonicParsing="false" onAction="#SupprimerSondage" prefHeight="25.0" prefWidth="100.0" text="Supprimer" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                       <Insets />
+                                                   </HBox.margin>
+                                               </VBox>
+                                           </children>
+                                       </HBox>
+                                   </children>
+                               </Pane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

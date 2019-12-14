@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutX="7.0" layoutY="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.7" layoutX="174.0" layoutY="89.0" prefHeight="375.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="157.0">
+               <children>
+                  <TabPane layoutX="41.0" layoutY="48.0" prefHeight="373.3333333333333" prefWidth="416.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Blogs partages">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseDragEntered="#par" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollBar layoutX="395.0" layoutY="87.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Mes blogs">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="280.0">
+               <children>
+                  <SplitPane dividerPositions="0.4" layoutX="8.0" layoutY="62.0" orientation="VERTICAL" prefHeight="373.3333333333333" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutY="115.0" prefHeight="25.0" prefWidth="174.0" text="         Mes blogs" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="Pristina" size="26.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.3015874226888022">
+                                       <stops>
+                                          <Stop color="BLACK" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Button layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Partager" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Button layoutY="73.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Creer" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ListView layoutX="-40.0" layoutY="-60.0" onMouseClicked="#partager" prefHeight="219.33333333333334" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
